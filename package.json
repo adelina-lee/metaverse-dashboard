@@ -1,0 +1,32 @@
+{
+  "name": "xmetadashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "postcss src/base/base.css --dir public/css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi-developers/xmetadashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mi-developers/xmetadashboard/issues"
+  },
+  "homepage": "https://github.com/mi-developers/xmetadashboard#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
+  },
+  "dependencies": {
+    "flowbite": "^1.5.3",
+    "postcss-cli": "^10.0.0",
+    "postcss-preset-env": "^7.8.2",
+    "tw-elements": "^1.0.0-alpha12"
+  }
+}

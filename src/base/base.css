@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    height: 100% !important;
+}
+
+body {
+    @apply  
+    h-full w-full
+    bg-gradient-to-tr from-whitePurple to-lightPurple 
+    dark:bg-gradient-to-tl dark:from-blackPurple dark:to-darkPurple bg-fixed;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+#overlay {
+    @apply blur-lg;
+}
+
+/* Containers */
+.navbar-container {
+    @apply 
+    pl-2 pr-2 
+    sm:pl-5 sm:pr-5
+    py-5
+    lg:py-10
+    xl:pl-10 xl:pr-80
+    flex justify-between;
+}
+
+.dashboard-container {
+    @apply 
+    pl-2 pr-2 
+    sm:pl-5 sm:pr-5
+    space-y-5
+    pb-10 
+    
+    lg:pb-24
+    lg:pr-80
+    xl:pl-10 xl:pr-80
+    2xl:pl-52;
+}
+
+.note-container {
+    border-width: 1px;
+    border-radius:8px; 
+    border-image: linear-gradient(to right, 
+    rgba(69, 117, 187, 0.5), 
+    rgba(151, 32, 248, 0.5),
+    rgba(0, 0, 0, 0.5), 
+    rgba(151, 32, 248, 0.5), 
+    rgba(69, 117, 187, 0.5)) 1;
+   @apply dark:text-white p-5 bg-blackGray/20 2xl:w-9/12;
+}
+
+#main {
+    @apply pb-10;
+}
+
+/* Navbar */
+.navbar-svg {
+    @apply fill-black dark:fill-white;
+}
+
+/* Boxes */
+.primary-box {
+    @apply 
+    space-y-5
+    p-5 
+    bg-gradient-to-tr from-bluePurple to-basicPurple 
+    rounded-xl lg:rounded-3xl 
+    dark:from-[#251D4D] dark:to-[#251D4D];
+}
+
+.secondary-box {
+    @apply h-fit bg-gradient-to-tr from-[#57378F] to-[#4575BA] rounded-xl lg:rounded-3xl p-5;
+}
+
+.small-box {
+    @apply 2xl:w-9/12;
+}
+
+/* Table box */
+.table-box table th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.table-box table th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.table-box table th {
+    font-weight: normal !important;
+}
+
+.table-box th, td {
+    padding: 10px;
+}
+
+.table-box table .chosen-line td:first-child {
+    border-radius: 10px 0 0 10px;
+    background-color: #524A9D;
+}
+
+.table-box table .chosen-line td:nth-child(2) {
+    background-color: #524A9D;
+}
+
+.table-box table .chosen-line td:last-child {
+    border-radius: 0 10px 10px 0;
+    background-color: #524A9D;
+}
+
+/* Sections */
+.dashboard-section {
+    @apply grid xl:grid-cols-2 gap-y-5 xl:gap-y-0 xl:gap-x-10 2xl:gap-x-10;
+}
+
+.dashboard-section .title-section {
+    @apply space-y-1;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply text-blackGray hover:text-white dark:text-white bg-white dark:bg-gradient-to-b dark:from-lightTeal dark:to-mediumTeal dark:hover:from-mediumTeal dark:hover:to-mediumTeal hover:bg-neonTeal focus:outline-none focus:ring-4 focus:ring-mediumTeal/30 dark:focus:ring-white/30 rounded-lg p-2.5 transition-all duration-300;
+}
+
+.btn-primary-sm {
+    @apply text-blackGray hover:text-white dark:text-white bg-white dark:bg-gradient-to-b dark:from-lightTeal dark:to-mediumTeal dark:hover:from-mediumTeal dark:hover:to-mediumTeal hover:bg-neonTeal focus:outline-none focus:ring-4 focus:ring-mediumTeal/30 dark:focus:ring-white/30 rounded-lg px-8 py-2 transition-all duration-300;
+}
+
+.btn-secondary {
+    @apply text-white bg-gradient-to-b from-lightTeal to-mediumTeal font-bold dark:hover:from-mediumTeal dark:hover:to-mediumTeal hover:bg-neonTeal focus:outline-none focus:ring-4 focus:ring-mediumTeal/30 dark:focus:ring-white/30 rounded-lg p-2.5 transition-all duration-300 w-full;
+}
+
+/* Sidebar navigation */
+.sidebar-nav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+
+    @apply bg-white py-10 px-5 dark:bg-gradient-to-b from-[#423294] to-darkPurple hidden lg:block;
+}
+
+.sidebar-nav .sidebar-links a {
+    @apply px-2 py-3 justify-end flex rounded-lg font-medium text-black dark:text-white;
+}
+
+.sidebar-nav .sidebar-links a:hover {
+    transition: 0.3s;
+    @apply bg-gradient-to-b from-lightTeal to-mediumTeal transition duration-300;
+}
+
+.active-link {
+    @apply bg-gradient-to-b from-lightTeal to-mediumTeal;
+}
+
+.sidebar-links svg {
+    @apply fill-black dark:fill-white px-3 w-12 h-5;
+}
+
+.sidebar-nav .sidebar-nav-divider,
+.mobile-sidebar-nav .sidebar-nav-divider {
+    border-bottom: 1px solid #C5C5C5;
+    margin: 15px 0px;
+}
+
+.sidebar-nav .sidebar-brand {
+    text-align: -webkit-center;
+    @apply py-2;
+}
+
+.sidebar-nav .sidebar-brand img {
+    @apply w-10/12;
+}
+
+/* Mobile off-canvas sidebar navigation */
+.mobile-sidebar-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+    @apply bg-white dark:bg-gradient-to-b from-[#423294] to-darkPurple space-y-5;
+}
+
+.mobile-sidebar-nav .mobile-sidebar-brand {
+    @apply px-5;
+}
+
+.mobile-sidebar-nav .mobile-sidebar-links {
+    @apply px-5;
+}
+
+.mobile-sidebar-nav .mobile-sidebar-links a {
+    @apply block px-2 py-3 justify-end flex rounded-lg font-medium text-black dark:text-white items-center;
+}
+
+.mobile-sidebar-nav .mobile-sidebar-links a:hover {
+    transition: 0.3s;
+    @apply bg-gradient-to-b from-lightTeal to-mediumTeal transition duration-300;
+}
+
+.mobile-sidebar-nav .mobile-sidebar-links svg {
+    @apply fill-black dark:fill-white px-2 w-12 h-5;
+}
+
+.mobile-sidebar-nav .btn-close-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    margin-left: 20px;
+
+    @apply py-5 text-black dark:text-white;
+}
+
+/* Texts */
+.section-title {
+    @apply text-4xl font-bold dark:text-white;
+}
+
+.small-section-title {
+    @apply text-lg font-bold dark:text-white;
+}
+
+.section-subtitle {
+    @apply dark:text-white;
+}
+
+.section-paragraph {
+    @apply font-light dark:text-white
+}
+
+.primary-box .title {
+    @apply text-lg text-neonTeal font-bold;
+}
+
+.primary-box .subtitle {
+    @apply text-sm font-medium text-neonTeal;
+}
+
+.secondary-box .title, .secondary-box-small .title {
+    @apply text-center font-bold text-white text-lg;
+}
+
+.primary-box .mini-title,
+.secondary-box .mini-title,
+.tertiary-box .mini-title {
+    @apply text-[#D1D1D1] text-xs;
+}
+
+.primary-box .digits, .box-tertiary .digits {
+    @apply text-5xl text-white font-bold;
+}
+
+.primary-box .digit-information, .tertiary-box .digit-information {
+    @apply text-xl text-white font-bold;
+}
+
+.primary-box .subtitle {
+    @apply  text-sm font-light text-white;
+}
+
+.large-data {
+    @apply text-3xl font-bold text-white mb-2;
+}
+
+.modal-input-box .placeholder {
+    @apply text-[#828282];
+}
+
+/* Component */
+.dropdown-component {
+    @apply text-xs rounded-full bg-[#150E37] px-10 text-white border-none;
+}
+
+.info-icon {
+    @apply text-neonTeal;
+}
+
+.modal-input-box {
+    @apply border rounded-lg border-[#828282] py-3 px-3 sm:flex sm:justify-between items-center;
+}
+
+/* Pagination */
+.pagination {
+    @apply w-full text-center pt-12 pb-5;
+    display: inline-block;
+}
+  
+.pagination a {
+    @apply text-white rounded-lg;
+    
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #524A9D;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    @apply bg-[#524A9D]/50;
+}
+
+/* Center modal */
+.medium-modal {
+    /* @apply pt-[200px]; */
+    padding-top: 25vh;
+}
+
+.medium-modal .medium-modal-content {
+    @apply w-11/12 md:w-1/2 xl:w-5/12 2xl:w-[550px];
+}
+
+.medium-modal .close {
+    @apply float-right text-white font-bold p-[25px] text-lg;
+  }
+/*  */
+.invite-affiliates-modal .modal-content {
+    @apply px-[20px] md:px-[50px] py-[20px] 2xl:px-[40px] 2xl:py-[30px] space-y-5;
+}
+
+.invite-affiliates-modal .modal-content .title {
+    @apply text-5xl font-bold text-center;
+}
+
+.invite-affiliates-modal .modal-content .subtitle {
+    @apply text-base text-center font-light;
+}
+
+/* Right modal (Wallet modal) */
+.wallet-modal {
+    /* @apply pt-[200px]; */
+}
+
+.wallet-modal .medium-modal-content {
+    @apply w-11/12 md:w-1/2 xl:w-5/12 2xl:w-4/12 h-fit;
+
+}
+
+.wallet-modal .wallet-item-modal {
+    @apply px-[20px] md:px-[50px] py-[20px] 2xl:px-[40px] 2xl:w-[550px];
+}
+
+.wallet-item-modal .modal-content {
+    @apply space-y-5;
+}
+
+.wallet-modal .close {
+    @apply float-right text-white font-bold py-[10px] text-lg;
+}
+
+/* Unlock referral modal */
+.unlock-referral-modal {
+    @apply pt-[300px];
+}
+
+.unlock-referral-modal .medium-modal-content {
+    @apply w-11/12 md:w-1/2 xl:w-5/12 2xl:w-4/12;
+}
+
+.wallet-modal .unlock-referral-modal {
+    @apply px-[20px] md:px-[50px] py-[20px] 2xl:px-[40px] 
+    md:w-[600px]
+    2xl:w-[550px];
+}
+
+/* Nav Tabs */
+.nav-tabs .nav-link {
+    @apply text-white/70 font-light;
+}
+
+.nav-tabs .nav-link.active {
+    @apply text-base font-bold border-b border-[#42C6C2] !important;
+    color: white;
+    background-color: transparent !important;
+    text-transform: none;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 1rem;
+    padding: 60px 0px;
+}

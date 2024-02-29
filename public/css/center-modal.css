@@ -1,0 +1,40 @@
+/* Entire modal with background */
+.medium-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* Modal Content */
+  .medium-modal .medium-modal-content {
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    margin: auto;
+    border: 1px solid #9720F8;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* The Close Button */
+  .medium-modal .close {
+    color: white;
+    float: right;
+    font-weight: bold;
+  }
+  
+  .medium-modal .close:hover,
+  .medium-modal .close:focus {
+    color: #42C6C2;
+    text-decoration: none;
+    cursor: pointer;
+  }
